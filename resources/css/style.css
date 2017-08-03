@@ -4,22 +4,23 @@ html {
   color: white;
 }
 
-h1 h4 {
+body {
+  font-size: 16px;
+}
+
+h1,
+h4 {
   font-weight: bold;
 }
 
-h1 {
-  font-size: 2rem;
-}
-
 h4 {
-  font-size: 1rem;
+  font-size: 1em;
   margin: 0;
-  padding-bottom: 0.25rem;
+  padding-bottom: 0.25em;
 }
 
 .container {
-  width: 960px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
@@ -32,19 +33,19 @@ h4 {
 .company .container {
   display: flex;
   align-items: center;
-  padding: 0.66rem 0 0.66rem 1rem;
+  padding: 0.66em 0 0.66em 1em;
 }
 
 .company img {
-  height: 1.5rem;
-  padding-left: 0.5rem;
-  padding-right: 1rem;
+  height: 1.5em;
+  padding-left: 0.5em;
+  padding-right: 1em;
 }
 
 /* Main banner */
 
 .main-banner {
-  height: 25rem;
+  height: 25em;
   background-image: url("https://halllou.github.io/secret-agent-supply/resources/images/moto.jpeg");
   background-position: center;
   background-repeat: no-repeat;
@@ -53,10 +54,16 @@ h4 {
 
 .headline {
   background-color: black;
-  width: 20rem;
-  padding: 2rem 3rem;
+  width: 20em;
+  padding: 2em 3em;
   position: relative;
-  top: 9rem
+  top: 9em;
+}
+
+.headline h1 {
+  font-size: 2em;
+  line-height: 1.2em;
+  margin: 0.25em 0;
 }
 
 /* Nav bar */
@@ -66,18 +73,21 @@ nav {
 }
 
 nav ul {
-  padding: 0.75rem 0;
+  padding: 0.75em 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+.mobile-nav {
+  display: none;
+}
 /* Products */
 
 .products {
   display: flex;
   justify-content: space-between;
-  margin: 3rem 0 0 0;
+  margin: 3em 0 0 0;
 }
 
 .product {
@@ -85,21 +95,21 @@ nav ul {
 }
 
 .product-image {
-  height: 9rem;
+  height: 9em;
   justify-content: center;
   align-items: center;
   border: 4px solid black;
-  padding: 2rem 0;
+  padding: 2em 0;
   display: flex;
 }
 
 .product-image img {
-  max-width: 8rem;
+  max-width: 8em;
 }
 
 .description {
   background-color: black;
-  padding: 0.5rem 0;
+  padding: 0.5em 0;
   display: block;
   text-align: center;
 }
@@ -107,7 +117,7 @@ nav ul {
 .business-info {
   display: flex;
   justify-content: space-between;
-  margin: 3rem 0 0 0;
+  margin: 3em 0 0 0;
 }
 
 .info {
@@ -117,15 +127,118 @@ nav ul {
 .info .title {
   display: block;
   background-color: black;
-  padding: 1rem 2rem;
+  padding: 1em 2em;
 }
 
 /* Footer */
 
 footer {
   background-color: black;
-  padding: 5rem 0;
+  padding: 5em 0;
   text-align: left;
-  margin-top: 4rem;
+  margin-top: 4em;
   display: block;
+}
+
+.mobile-company {
+  display-none;
+}
+
+  .mobile-company .container {
+    display: none;
+}
+
+/* Media queries */
+@media only screen and (max-width: 1024px) {
+  .mobile-nav {
+    display: block;
+    text-align: center;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  .product {
+    width: 47%;
+  }
+
+  .product.glasses {
+    display: none;
+  }
+
+}
+
+@media only screen and (max-width: 470px) {
+
+  .main-banner {
+    height: 15rem;
+  }
+
+  .headline {
+    max-width: 100%;
+    padding: 1em 2em;
+    top: 10em;
+  }
+
+  .headline h4 {
+    font-size: .77rem;
+  }
+
+  .headline h1 {
+    font-size: 1rem;
+  }
+
+  .products,
+  .business-info {
+    flex-wrap: wrap;
+  }
+
+  .info {
+    width: 90%;
+    margin: 0.5em auto;
+  }
+
+  .product {
+    width: 90%;
+    margin: auto;
+  }
+
+  .product.watch {
+    display: none;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  .mobile-company {
+    background-color: black;
+  }
+
+  .mobile-company .container {
+      display: flex;
+      align-items: center;
+      padding: 0.66em 0 0.66em 1em;
+  }
+
+  .mobile-company img {
+    height: 1.5em;
+    height: 1.5em;
+    padding-left: 0.5em;
+    padding-right: 1em;
+  }
+
+  .company {
+    display: none;
+  }
+
+  .company .container {
+    display: none;
+  }
+
+  .company img {
+    display: none;
+  }
+
 }
